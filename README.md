@@ -64,7 +64,10 @@ No installation or build step is required.
 https://github.com/nijjukrr/EDBYTES.git
 
 ## 10. Live Website URL
-*Not yet verified on GitHub Pages — see deployment instructions in `SUBMISSION.md` or update this section once GitHub Pages finishes building.*
+**Verified Live URL (GitHub Pages — Static Portfolio):**  
+https://nijjukrr.github.io/EDBYTES/
+
+*(GitHub Pages hosts the static single-file portfolio on `main` / `/ (root)`. The separate **InternBoard** Express.js + SQLite backend runs locally from its repository and is not deployed on GitHub Pages.)*
 
 ## 11. Desktop Screenshot
 ![Desktop Portfolio View](docs/evidence/portfolio-desktop.png)

@@ -26,9 +26,9 @@ Tested in headless Google Chrome across 10 viewport sizes in both Hero and Case 
 - `1920×1080` (Full HD): PASS — `overflowX: false`, unclipped nav/dock/ticket, laptop visible.
 
 ## Required Check 4: Publication and Evidence
+- **Verified Live URL:** https://nijjukrr.github.io/EDBYTES/ *(Status: Published & Verified HTTP `200` on GitHub Pages, `main` / `/ (root)`)*
 - **Source Repository:** https://github.com/nijjukrr/EDBYTES.git (branch: `main`)
 - **Starter Backup:** Original 8 starter files from `task-fsd-01-beginner-20261028.zip` preserved untouched in `starter-backup/`.
-- **Live URL:** Pending GitHub Pages enablement/verification (not claimed until verified live).
 - **Evidence Screenshots:**
   - `docs/evidence/portfolio-desktop.png`
   - `docs/evidence/portfolio-mobile.png`
