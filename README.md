@@ -1,3 +1,11 @@
+# EdBytes Full Stack Development Internship
+
+> **Repository Navigation:**
+> - **Milestone 2 (Motion Design Portfolio):** Detailed below (root `index.html`).
+> - **Milestone 3 (TASKFLOW — Personal Task List):** Dedicated directory [`milestone-3-task-list/`](milestone-3-task-list/) | [Milestone 3 README](milestone-3-task-list/README.md) | [Milestone 3 Mentor Submission Report](milestone-3-task-list/SUBMISSION.md) | [Live Milestone 3 App](https://nijjukrr.github.io/EDBYTES/milestone-3-task-list/)
+
+---
+
 # Haldoren — Motion Design Portfolio (EdBytes Milestone 2)
 
 ## 1. Project Name
