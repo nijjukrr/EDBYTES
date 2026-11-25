@@ -1,0 +1,1 @@
+document.getElementById('operations').onclick=e=>{const op=e.target.dataset.op;if(!op)return;const a=document.getElementById('a').value,b=document.getElementById('b').value;/* TODO: check blank/finite inputs, convert with Number, use a switch for + - * /, reject division by zero. Never use eval. */};

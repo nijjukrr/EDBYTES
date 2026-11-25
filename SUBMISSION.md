@@ -95,3 +95,23 @@ Testing edge cases early—such as malformed `localStorage` JSON, programmatic o
 - Full test cases and 10-viewport responsive checks recorded in [milestone-4/TEST-REPORT.md](milestone-4/TEST-REPORT.md).
 - Correct-answer run (`3 / 3`), mixed-answer run (`2 / 3`), implementation decision, and learning observation draft recorded in [milestone-4/SUBMISSION-EVIDENCE.md](milestone-4/SUBMISSION-EVIDENCE.md).
 - Screenshots saved in `milestone-4/evidence/` (`quiz-start.png`, `question-answered.png`, `correct-run-result.png`, `mixed-run-result.png`, `mobile-quiz.png`).
+
+---
+
+# EdBytes Milestone 5 — Completion Report
+
+- **Title:** CALCURA — Smart Calculator (`Milestone 5: Four-Operation Calculator`, Task FSD-04)
+- **Live URL:** https://nijjukrr.github.io/EDBYTES/milestone-5/
+- **Source Folder URL:** https://github.com/nijjukrr/EDBYTES/tree/main/milestone-5
+- **Starter Backup:** Untouched copy of `task-fsd-04-beginner-20261028.zip` preserved in `milestone-5/starter-backup/`
+
+## Mandatory Checklist Results
+1. **Read two numeric inputs:** **PASS** — Reads `#a` and `#b`, validates raw strings & `badInput`, and converts with `Number()`.
+2. **Implement Add, Subtract, Multiply and Divide with explicit functions:** **PASS** — Implements explicit `add()`, `subtract()`, `multiply()`, and `divide()` selected via `switch` on `data-op`.
+3. **Show useful message for blank/non-numeric input and division by zero:** **PASS** — Rejects blank first/second/both inputs, non-numeric entries (`abc`), `0` and `-0` divisors, and non-finite overflows.
+4. **Test all four operations and one invalid example:** **PASS** — Verified `20 + 10 = 30`, `20 − 10 = 10`, `20 × 10 = 200`, `20 ÷ 10 = 2`, and `20 ÷ 0 -> "Cannot divide by zero."`.
+
+## Test & Evidence Summary
+- Full 15-test verification and 10-viewport responsive results recorded in [milestone-5/TEST-REPORT.md](milestone-5/TEST-REPORT.md).
+- Five required test examples, implementation decision, and editable learning observation recorded in [milestone-5/SUBMISSION-EVIDENCE.md](milestone-5/SUBMISSION-EVIDENCE.md).
+- Screenshots saved in `milestone-5/evidence/` (`calculator-default.png`, `addition-result.png`, `subtraction-result.png`, `multiplication-result.png`, `division-result.png`, `validation-error.png`, `mobile-calculator.png`).

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CALCURA — Smart Calculator</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="brand-header">
+      <div class="brand-lockup">
+        <img src="./assets/favicon.svg" alt="" class="brand-icon" width="38" height="38">
+        <div>
+          <h1 class="brand-name">CALCURA</h1>
+          <p class="brand-subtitle">Simple calculations. Clear results.</p>
+        </div>
+      </div>
+      <span class="badge-pill">EdBytes · Task FSD-04</span>
+    </header>
+
+    <main class="calc-stage">
+      <section class="calc-card" aria-labelledby="calc-heading">
+        <div class="calc-head">
+          <div>
+            <h2 id="calc-heading" class="card-title">Four-Operation Calculator</h2>
+            <p class="card-copy">Enter two numbers below and select an arithmetic operation.</p>
+          </div>
+          <div class="utility-actions">
+            <button type="button" id="swap-btn" class="util-btn" aria-label="Swap first and second numbers">Swap A ↔ B</button>
+            <button type="button" id="clear-btn" class="util-btn" aria-label="Clear calculator inputs and result">Clear</button>
+          </div>
+        </div>
+
+        <div class="inputs-grid">
+          <div class="field-group">
+            <label for="a" class="field-label">First Number (A)</label>
+            <input
+              id="a"
+              name="firstNumber"
+              type="number"
+              step="any"
+              class="num-input"
+              placeholder="e.g., 20"
+              inputmode="decimal"
+            >
+          </div>
+          <div class="field-group">
+            <label for="b" class="field-label">Second Number (B)</label>
+            <input
+              id="b"
+              name="secondNumber"
+              type="number"
+              step="any"
+              class="num-input"
+              placeholder="e.g., 10"
+              inputmode="decimal"
+            >
+          </div>
+        </div>
+
+        <div id="operations" class="operations-grid" role="group" aria-label="Arithmetic operations">
+          <button type="button" class="op-btn" data-op="+">
+            <span class="op-symbol" aria-hidden="true">+</span>
+            <span class="op-name">Add</span>
+          </button>
+          <button type="button" class="op-btn" data-op="-">
+            <span class="op-symbol" aria-hidden="true">−</span>
+            <span class="op-name">Subtract</span>
+          </button>
+          <button type="button" class="op-btn" data-op="*">
+            <span class="op-symbol" aria-hidden="true">×</span>
+            <span class="op-name">Multiply</span>
+          </button>
+          <button type="button" class="op-btn" data-op="/">
+            <span class="op-symbol" aria-hidden="true">÷</span>
+            <span class="op-name">Divide</span>
+          </button>
+        </div>
+
+        <div id="result" class="result-panel" role="status" aria-live="polite">
+          <div class="result-top">
+            <span id="result-badge" class="result-badge">Ready</span>
+            <span id="result-expression" class="result-expression">Waiting for numbers</span>
+          </div>
+          <div id="result-value" class="result-value">—</div>
+          <p id="result-message" class="result-message">Enter values for A and B, then choose Add, Subtract, Multiply, or Divide.</p>
+        </div>
+      </section>
+
+      <section id="history-card" class="history-card" aria-labelledby="history-heading" hidden>
+        <div class="history-head">
+          <h2 id="history-heading" class="history-title">Recent Calculations</h2>
+          <button type="button" id="clear-history-btn" class="util-btn util-btn--sm">Clear History</button>
+        </div>
+        <ul id="history-list" class="history-list"></ul>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>CALCURA · EdBytes Full Stack Development Internship — Milestone 5</p>
+    </footer>
+  </div>
+</body>
+</html>
