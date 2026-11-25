@@ -75,3 +75,23 @@ Preserved the starter's `tasks` array, `'practice-tasks'` `localStorage` key, `s
 *(Suggested draft — please review and personalize in your own words before final mentor submission.)*
 
 Testing edge cases early—such as malformed `localStorage` JSON, programmatic over-limit input, and CSS `[hidden]` overrides against `display: flex`—showed how quickly subtle UI or storage assumptions can break a small app. Inspecting real desktop and mobile screenshots alongside automated assertions caught layout issues that numeric checks alone missed.
+
+---
+
+# EdBytes Milestone 4 — Completion Report
+
+- **Title:** QUIZLY — Interactive Knowledge Quiz (`Milestone 4: A Three-Question Quiz`, Task FSD-03)
+- **Live URL:** https://nijjukrr.github.io/EDBYTES/milestone-4/
+- **Source Folder URL:** https://github.com/nijjukrr/EDBYTES/tree/main/milestone-4
+- **Starter Backup:** Untouched copy of `task-fsd-03-beginner-20261028 (1).zip` preserved in `milestone-4/starter-backup/`
+
+## Mandatory Checklist Results
+1. **Read the provided question array:** **PASS** — Preserved the exact 3-question `questions` array as single source of truth.
+2. **Show one question and its answer buttons:** **PASS** — Displays one question at a time (`1 of 3` -> `3 of 3`) with dynamically rendered answer buttons.
+3. **Count each question only once and show correct/incorrect text:** **PASS** — `answered` guard + disabled choices prevent double counting; immediate feedback shows `"Correct! Well done."` or `"Incorrect. The correct answer is CSS."`.
+4. **Show the score out of three after the final answer:** **PASS** — Verified both `3 / 3` (correct run: `h1`, `CSS`, `7`) and `2 / 3` (mixed run: `h1`, `SQL`, `7`).
+
+## Test & Evidence Summary
+- Full test cases and 10-viewport responsive checks recorded in [milestone-4/TEST-REPORT.md](milestone-4/TEST-REPORT.md).
+- Correct-answer run (`3 / 3`), mixed-answer run (`2 / 3`), implementation decision, and learning observation draft recorded in [milestone-4/SUBMISSION-EVIDENCE.md](milestone-4/SUBMISSION-EVIDENCE.md).
+- Screenshots saved in `milestone-4/evidence/` (`quiz-start.png`, `question-answered.png`, `correct-run-result.png`, `mixed-run-result.png`, `mobile-quiz.png`).

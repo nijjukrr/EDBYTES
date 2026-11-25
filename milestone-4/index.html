@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QUIZLY — Interactive Knowledge Quiz</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="brand-header">
+      <div class="brand-lockup">
+        <img src="./assets/favicon.svg" alt="" class="brand-icon" width="38" height="38">
+        <div>
+          <span class="brand-name">QUIZLY</span>
+          <p class="brand-subtitle">Test your knowledge. Learn as you go.</p>
+        </div>
+      </div>
+      <span class="badge-pill">EdBytes · Task FSD-03</span>
+    </header>
+
+    <main class="quiz-stage">
+      <!-- 1. Start Screen -->
+      <section id="start-screen" class="quiz-card start-card" aria-labelledby="start-title">
+        <span class="eyebrow">Three-Question Quiz</span>
+        <h1 id="start-title" class="card-title">Ready to check the essentials?</h1>
+        <p class="card-copy">
+          Answer three quick foundational questions one at a time. Each choice locks immediately and reveals instant feedback before advancing.
+        </p>
+        <div class="meta-strip" aria-label="Quiz overview">
+          <div class="meta-box">
+            <span class="meta-label">Questions</span>
+            <strong class="meta-value" id="meta-count">3</strong>
+          </div>
+          <div class="meta-box">
+            <span class="meta-label">Scoring</span>
+            <strong class="meta-value">1 pt / question</strong>
+          </div>
+        </div>
+        <button type="button" id="start-btn" class="btn btn--primary btn--full">Start Quiz</button>
+      </section>
+
+      <!-- 2. Active Question Screen -->
+      <section id="quiz-screen" class="quiz-card" aria-labelledby="question" hidden>
+        <div class="progress-head">
+          <span id="progress-label" class="progress-label">Question 1 of 3</span>
+          <span id="progress-percent" class="progress-percent">33%</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" id="progress-bar-wrap">
+          <div id="progress-fill" class="progress-fill" style="width: 33.33%;"></div>
+        </div>
+
+        <h2 id="question" class="question-title"></h2>
+
+        <div id="answers" class="answers-grid" role="group" aria-label="Answer choices"></div>
+
+        <p id="feedback" class="feedback-banner" role="status" aria-live="polite" hidden></p>
+
+        <div class="quiz-actions">
+          <button type="button" id="next" class="btn btn--primary btn--full" hidden>Next Question</button>
+        </div>
+      </section>
+
+      <!-- 3. Final Score Screen -->
+      <section id="result-screen" class="quiz-card result-card" aria-labelledby="result-heading" hidden>
+        <span class="eyebrow eyebrow--success">Quiz Completed!</span>
+        <h2 id="result-heading" class="card-title">Your Score</h2>
+        <div class="score-showcase">
+          <strong id="score" class="score-big">0 / 3</strong>
+          <p id="result-message" class="result-message"></p>
+        </div>
+
+        <div class="breakdown-grid">
+          <div class="breakdown-item breakdown-item--correct">
+            <span class="breakdown-label">Correct Answers</span>
+            <strong id="correct-count" class="breakdown-value">0</strong>
+          </div>
+          <div class="breakdown-item breakdown-item--wrong">
+            <span class="breakdown-label">Incorrect Answers</span>
+            <strong id="wrong-count" class="breakdown-value">0</strong>
+          </div>
+        </div>
+
+        <button type="button" id="restart-btn" class="btn btn--primary btn--full">Restart Quiz</button>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>QUIZLY · EdBytes Full Stack Development Internship — Milestone 4</p>
+    </footer>
+  </div>
+</body>
+</html>
