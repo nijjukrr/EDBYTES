@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TASKFLOW — Smart Task Manager</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-row">
+        <div class="brand-lockup">
+          <img src="./assets/favicon.svg" alt="" class="brand-icon" width="38" height="38">
+          <div>
+            <h1 class="brand-name">TASKFLOW</h1>
+            <p class="brand-subtitle">Plan clearly. Get things done.</p>
+          </div>
+        </div>
+        <div class="date-badge" aria-label="Current date">
+          <span class="date-label">Today</span>
+          <time id="current-date" class="date-value"></time>
+        </div>
+      </div>
+
+      <section class="stats-grid" aria-label="Task statistics">
+        <div class="stat-card">
+          <span class="stat-label">Total Tasks</span>
+          <strong id="stat-total" class="stat-value">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Pending</span>
+          <strong id="stat-pending" class="stat-value stat-value--pending">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Completed</span>
+          <strong id="stat-completed" class="stat-value stat-value--completed">0</strong>
+        </div>
+      </section>
+    </header>
+
+    <main class="main-panel">
+      <section class="composer-card" aria-labelledby="add-task-heading">
+        <h2 id="add-task-heading" class="section-heading">Add a New Task</h2>
+        <form id="form" class="task-form" novalidate>
+          <div class="input-group">
+            <label for="text" class="sr-only">Task description (up to 200 characters)</label>
+            <input
+              id="text"
+              name="task"
+              type="text"
+              class="task-input"
+              maxlength="200"
+              autocomplete="off"
+              placeholder="What needs your focus next? (e.g., Prepare for mentor review)"
+            >
+            <span id="char-count" class="char-count" aria-live="off">0 / 200</span>
+          </div>
+          <button type="submit" id="add-btn" class="btn btn--primary">Add Task</button>
+        </form>
+        <p id="message" class="status-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="tasks-card" aria-labelledby="tasks-heading">
+        <div class="tasks-toolbar">
+          <div class="tasks-title-group">
+            <h2 id="tasks-heading" class="section-heading">Your Tasks</h2>
+            <span id="tasks-summary" class="tasks-summary">0 items</span>
+          </div>
+          <div class="clear-controls">
+            <button type="button" id="clear-all-btn" class="btn btn--ghost" hidden>Clear All</button>
+            <div id="clear-confirm" class="clear-confirm" hidden>
+              <span class="clear-confirm-label">Clear all tasks?</span>
+              <button type="button" id="confirm-clear-btn" class="btn btn--danger btn--sm">Confirm</button>
+              <button type="button" id="cancel-clear-btn" class="btn btn--ghost btn--sm">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon" aria-hidden="true">✓</div>
+          <p class="empty-title">No tasks yet.</p>
+          <p class="empty-copy">Add your first task above to get started. Tasks save automatically in this browser.</p>
+        </div>
+
+        <ul id="list" class="task-list" aria-label="Task items"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Saved locally in your browser via <code>localStorage</code> · EdBytes Milestone 3</p>
+    </footer>
+  </div>
+</body>
+</html>

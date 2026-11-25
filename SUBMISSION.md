@@ -49,3 +49,29 @@ Opened `index.html` over local HTTP in headless Google Chrome at `1440×900`. Ve
 *(Draft prepared from implementation observations — review and personalize if desired before final submission.)*
 
 Combining a fixed-viewport `1440 × 810` photographic motion composition with real portfolio requirements taught me that decorative transitions must never trap or hide core content. Visual screenshot inspection caught subtle issues (such as a scroll hint remaining visible in case mode and badge/script overlap) that DOM bounds checks alone missed, reinforcing why inspecting actual rendered screenshots across mobile and desktop widths is essential.
+
+---
+
+# EdBytes Milestone 3 — Completion Report
+
+- **Title:** TASKFLOW — Smart Task Manager (`Milestone 3: A Small Task List`)
+- **Live URL:** https://nijjukrr.github.io/EDBYTES/milestone-3/
+- **Source Folder URL:** https://github.com/nijjukrr/EDBYTES/tree/main/milestone-3
+- **Starter Backup:** Untouched copy of `task-fsd-02-beginner-20261028.zip` preserved in `milestone-3/starter-backup/`
+
+## Mandatory Requirements Results
+1. **Connect the Add button or form to add non-blank text:** **PASS** — Form submits on button click and `Enter`, trims whitespace, rejects blank/whitespace-only and >200-char inputs with visible status messages.
+2. **Add a Delete action for each task:** **PASS** — Every task row renders an individual `Delete` button bound to that task's stable unique `id`.
+3. **Use the supplied save/load helper after changes:** **PASS** — Every add, completion toggle, delete, and clear action calls `save()` using the `'practice-tasks'` `localStorage` key, and `loadTasks()` validates stored data on startup.
+4. **Refresh and show that saved tasks return:** **PASS** — Verified in headless Chrome across reloads that added tasks and completion states persist and deleted tasks do not return.
+
+## Test Note
+Tested in headless Google Chrome across desktop (`1920×1080`, `1440×900`, `1280×720`, `1024×768`), tablet (`820×1180`, `768×1024`), and mobile (`430×932`, `390×844`, `375×812`, `360×740`) viewports with 0 horizontal overflow and 0 console/page errors. Verified blank-input rejection, special characters (`"Study HTML & CSS <Basics>"`) safe rendering via `textContent`, 200-char limit & 205-char rejection, and recovery from malformed JSON in `localStorage`. Full details are documented in [milestone-3/TEST-REPORT.md](milestone-3/TEST-REPORT.md).
+
+## Implementation Decision
+Preserved the starter's `tasks` array, `'practice-tasks'` `localStorage` key, `save()`, and `render()` workflow while normalizing records with stable unique `id` values (`crypto.randomUUID()` with timestamp fallback). Deleting by `id` rather than array index prevents stale-index deletion bugs, and normalizing both legacy plain strings and `{ id, text, completed, createdAt }` objects keeps existing saved tasks compatible.
+
+## Learning Observation
+*(Suggested draft — please review and personalize in your own words before final mentor submission.)*
+
+Testing edge cases early—such as malformed `localStorage` JSON, programmatic over-limit input, and CSS `[hidden]` overrides against `display: flex`—showed how quickly subtle UI or storage assumptions can break a small app. Inspecting real desktop and mobile screenshots alongside automated assertions caught layout issues that numeric checks alone missed.
